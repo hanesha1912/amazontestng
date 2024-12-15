@@ -3,6 +3,7 @@ package base;
 
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -25,7 +26,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.google.common.collect.Table.Cell;
+import org.apache.poi.ss.usermodel.Cell;
 
 public class BaseTest {
 	public WebDriver driver;
