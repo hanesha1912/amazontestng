@@ -72,7 +72,7 @@ public class BaseTest {
 	System.out.println("The username from the excel is :" + username);
 	String password  =  sheet.getRow(1).getCell(1).getStringCellValue();
 	System.out.println("The password from the excel is :" + password);
-	
+	System.out.println("The password from the excel is :" + password);
 	workbook.close();
 	
 	}
