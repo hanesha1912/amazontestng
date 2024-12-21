@@ -26,6 +26,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentTest;
+
+import io.opentelemetry.semconv.SemanticAttributes.FaasTriggerValues;
+
 import org.apache.poi.ss.usermodel.Cell;
 
 public class BaseTest {
@@ -57,7 +60,7 @@ public class BaseTest {
 	
 	
 	public void fetchDataFromExcel() throws IOException {
-		File excelFile = new File(System.getProperty("user.dir")+ "src\\main\\java\\utilities\\fw.xlsx" );
+		File excelFile = new File(System.getProperty("user.dir")+ "\\src\\main\\java\\utilities\\fw.xlsx" );
 		FileInputStream fis = new FileInputStream(excelFile);
 		
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -66,13 +69,21 @@ public class BaseTest {
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		
 		DataFormatter format = new DataFormatter();
-		Cell cell = sheet.getRow(1).getCell(0);
+		Cell cell = sheet.getRow(1).getCell(1);
 	
-	String username = format.formatCellValue(cell);
+/*	String username = format.formatCellValue(cell);
 	System.out.println("The username from the excel is :" + username);
 	String password  =  sheet.getRow(1).getCell(1).getStringCellValue();
 	System.out.println("The password from the excel is :" + password);
-	System.out.println("The password from the excel is :" + password);
+	System.out.println("The password from the excel is :" + password);*/
+		
+	String username  =  sheet.getRow(1).getCell(0).getStringCellValue();
+	
+	String mobile =  format.formatCellValue(cell);
+	String password  = sheet.getRow(1).getCell(2).getStringCellValue();
+	System.out.println(username+" "+mobile+" "+password);
+	
+	
 	workbook.close();
 	
 	}

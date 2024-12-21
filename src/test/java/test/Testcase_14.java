@@ -1,5 +1,9 @@
 package test;
 
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
 //Steps:
 //1. Launch Chrome browser.
 //2. Launch URL https://www.amazon.in
@@ -34,7 +38,12 @@ public class Testcase_14  extends BaseTest{
 	
 *
 */
-	
+	@Test
+	public void test14() throws IOException {
+		
+		super.fetchDataFromExcel();
+		
+	}
 	
 
 }

@@ -68,7 +68,7 @@ public class Listeners extends BaseTest implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {
-		test.log(Status.INFO,"Test has finished --");
+		
 		logger.info(" ** Test finished **");
 		extent.flush();
 	}
