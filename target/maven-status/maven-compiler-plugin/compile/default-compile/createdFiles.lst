@@ -1,0 +1,4 @@
+pageObjects\Sign_in_page.class
+pageObjects\LoginPage.class
+pageObjects\ProductPage.class
+pageObjects\CartPage.class
